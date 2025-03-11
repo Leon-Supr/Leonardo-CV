@@ -42,7 +42,7 @@ async function getResponse(zoom: number): Promise<{ htmlText: string; headers: R
   // Change the title and add favicon
   htmlText = htmlText.replace(
     "<title>index-html.html</title>",
-    "<title>Jose Fabio Argüello Loya</title>" +
+    "<title>Leonardo Argüello Loya</title>" +
       '<link rel="icon" href="figures/favicon/favicon.svg" type="image/svg+xml">'
   );
 
