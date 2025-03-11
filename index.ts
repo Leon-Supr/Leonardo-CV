@@ -13,7 +13,7 @@ async function getResponse(zoom: number): Promise<{ htmlText: string; headers: R
 
   const poppler = new Poppler();
 
-  await poppler.pdfToHtml("jose-fabio-arguello-loya-resume.pdf", "index", {
+  await poppler.pdfToHtml("leonardo-cv.pdf", "index", {
     zoom,
     dataUrls: true,
     singlePage: true,
@@ -42,7 +42,7 @@ async function getResponse(zoom: number): Promise<{ htmlText: string; headers: R
   // Change the title and add favicon
   htmlText = htmlText.replace(
     "<title>index-html.html</title>",
-    "<title>Jose Fabio Argüello Loya</title>" +
+    "<title>Leonardo Argüello Loya</title>" +
       '<link rel="icon" href="i/favicon/favicon.svg" type="image/svg+xml">'
   );
 
@@ -54,7 +54,7 @@ async function getResponse(zoom: number): Promise<{ htmlText: string; headers: R
     "ETag": `"${encodeHex(await crypto.subtle.digest("SHA-384", new TextEncoder().encode(htmlText)))}"`,
   };
 
-  const { mtime } = await Deno.stat("./jose-fabio-arguello-loya-resume.pdf");
+  const { mtime } = await Deno.stat("./leonardo-cv.pdf");
   if (mtime) headers["Last-Modified"] = mtime.toUTCString();
 
   return { htmlText, headers };

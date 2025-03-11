@@ -1,13 +1,13 @@
 {
   "tasks": {
-    "stop": "pm2 stop josefabio",
-    "start": "pm2 start --interpreter='deno' --interpreter-args='serve -A --port 5055' --name josefabio index.ts && pm2 logs josefabio",
-    "logs": "pm2 logs josefabio",
-    "reload": "pm2 reload josefabio && pm2 logs josefabio",
-    "delete": "pm2 delete josefabio",
+    "stop": "pm2 stop leonardo",
+    "start": "pm2 start --interpreter='deno' --interpreter-args='serve -A --port 5056' --name leonardo index.ts && pm2 logs leonardo",
+    "logs": "pm2 logs leonardo",
+    "reload": "pm2 reload leonardo && pm2 logs leonardo",
+    "delete": "pm2 delete leonardo",
     "check": "deno check --allow-import index.ts",
-    "run": "deno serve -A --port 5055 index.ts",
-    "watch": "deno serve -A --watch --port 5055 index.ts",
+    "run": "deno serve -A --port 5056 index.ts",
+    "watch": "deno serve -A --watch --port 5056 index.ts",
     "run:molt": "deno run --allow-import --allow-env --allow-read --allow-write=. --allow-run=git,deno --allow-net=deno.land,esm.sh,cdn.jsdelivr.net https://deno.land/x/molt/cli.ts",
     "update_deps": "deno task -q run:molt check ./**/*.ts"
   },
